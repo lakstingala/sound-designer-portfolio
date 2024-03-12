@@ -40,7 +40,7 @@ export default function ModalVideo({
                         leaveTo="opacity-0 scale-75"
                     >
                         <div className="max-w-5xl mx-auto h-full flex items-center">
-                            <Dialog.Panel className={`w-[90%] h-[70%] aspect-video bg-black overflow-hidden bg-red`}>
+                            <Dialog.Panel className={`w-full h-[50vw] lg:h-[70%] aspect-video bg-black overflow-hidden bg-red`}>
                                 <YouTubeEmbed embedId='79DijItQXMM?si=HldRIMiuTpgif5nW' />
                             </Dialog.Panel>
                         </div>
