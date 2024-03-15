@@ -11,8 +11,9 @@ export default function Home() {
   const [embedId, setEmbedId] = useState("")
   return <div>
     <TopMenu />
-    <div className="flex flex-col md:flex-row justify-between">
-      {["1", "2", "3"].map(x => {
+    {/* <div className="flex flex-col md:flex-row justify-between"> */}
+    <div className="grid grid-cols-1 md:grid-cols-3">
+      {["1", "2", "3", "11", "21", "31"].map(x => {
         return <div key={x}>
           <ImageCell thumb={"/moana.png"} thumbAlt={""} thumbWidth={1000} thumbHeight={1000} onClick={() => {
             setEmbedId("Fun")
