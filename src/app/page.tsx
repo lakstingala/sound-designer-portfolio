@@ -1,6 +1,7 @@
 'use client'
 
 import About from "@/components/about"
+import Contacts from "@/components/contacts"
 import ImageCell from "@/components/imageCell"
 import TopMenu from "@/components/topMenu"
 import ModalVideo from "@/components/videoModal"
@@ -23,5 +24,6 @@ export default function Home() {
       }} />
     </div>
     <About />
+    <Contacts />
   </div>
 }
