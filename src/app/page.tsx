@@ -1,5 +1,6 @@
 'use client'
 
+import About from "@/components/about"
 import ImageCell from "@/components/imageCell"
 import TopMenu from "@/components/topMenu"
 import ModalVideo from "@/components/videoModal"
@@ -21,5 +22,6 @@ export default function Home() {
         setEmbedId("")
       }} />
     </div>
+    <About />
   </div>
 }
