@@ -1,4 +1,5 @@
 import { Formik, Field, Form, FormikHelpers } from 'formik';
+import { MyTextareaField } from './textArea';
 
 interface Values {
     name: string;
@@ -44,7 +45,7 @@ const Contacts = () => {
 
 
                             <label htmlFor="message">Message</label>
-                            <Field id="message" name="message" placeholder="Message.." className="mb-[10px] p-[10px]" />
+                            <MyTextareaField id="message" name="message" placeholder="Message.." className="mb-[10px] p-[10px]" />
                             <p className='text-[18px] text-[#7B9A98] pb-[20px]'>This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
 
                             <button className='bg-[#7B9A98] hover:bg-[#5D8E9B] w-[200px] h-[50px] mb-[20px]' type="submit">Send</button>
