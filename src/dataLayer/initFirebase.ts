@@ -1,12 +1,15 @@
 import { getAuth } from "firebase/auth";
 import { getFunctions } from "firebase/functions";
-import { getFirestore } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { getFirestore } from 'firebase/firestore'
+import { getStorage } from 'firebase/storage'
+
 
 // Your web app's Firebase configuration
+console.log("ds", process.env.DB_HOST)
 const firebaseConfig = {
-  apiKey: "AIzaSyByj5JoW8DOBUCMnHzz5QWsAeC62C00GsY",
+  apiKey: process.env.apiKey,
   authDomain: "karolio-portfolio-web.firebaseapp.com",
   projectId: "karolio-portfolio-web",
   storageBucket: "karolio-portfolio-web.appspot.com",
@@ -21,3 +24,4 @@ export const analytics = getAnalytics(app);
 export const firebaseAuth = getAuth(app);
 export const db = getFirestore(app);
 export const fbFunctions = getFunctions(app, "europe-west3");
+export const storage = getStorage(app);
