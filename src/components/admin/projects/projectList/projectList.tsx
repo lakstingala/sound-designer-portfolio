@@ -29,6 +29,6 @@ export const ProjectList = () => {
 
 
     return <div>Project list
-        <div>{project.map(x => <p>{x.title}</p>)}</div>
+        <div>{project.map(x => <p key={x.id}>{x.title}</p>)}</div>
     </div>
 }
