@@ -38,6 +38,7 @@ export const NewProject = () => {
                         .then(_x => {
                             resetForm();
                             setSubmitting(false);
+                            setImage("")
                         })
                         .catch(error => console.log(error))
                         .finally(() => { console.log("done") })
@@ -63,7 +64,7 @@ export const NewProject = () => {
                         onChange={img => setImage(img)}
                     />
 
-                    <button className='bg-[#7B9A98] hover:bg-[#5D8E9B] w-[200px] h-[50px] mb-[20px]' type="submit">Create new</button>
+                    <button className='btn btn-primary' type="submit">Create new</button>
                 </Form>
             </Formik>
         </div>
