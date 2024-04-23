@@ -17,7 +17,7 @@ export default function Login() {
         // Signed in 
         const user = userCredential.user;
         console.log(user);
-        router.push('/main')
+        router.push('admin/main')
         // ...
       })
       .catch((error) => {
@@ -31,7 +31,7 @@ export default function Login() {
     <div className="flex h-screen bg-gray-100 bg-gray-900 p-2">
       <div className="m-auto">
         <div className="flex flex-col content-center justify-around">
-          <h1 className="text-6xl uppercase font-extrabold text-center">Dvidlis</h1>
+          <h1 className="text-6xl uppercase font-extrabold text-center">Hey there</h1>
 
           <button className="m-5" onClick={login} >Identify yourself</button>
           

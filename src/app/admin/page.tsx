@@ -1,19 +1,25 @@
 'use client'
 
+import { firebaseAuth } from "@/dataLayer/initFirebase";
 import {useRouter } from "next/navigation"
-import { useEffect } from "react";
+import { onAuthStateChanged } from 'firebase/auth';
 
 export default function Home() {
     const router = useRouter();
 
-    useEffect(() => {
-        if(firebaseAuth.currentUser) {
-            router.push("/main")
-        }
-    }, [firebaseAuth.currentUser]
+    onAuthStateChanged(firebaseAuth, (user) => {
+      if (user) {
+        router.push('/admin/main');
+      } else {
+        router.push('/admin/login');
+      }
+    });
+  
+    return (
+      <main className="flex items-center justify-center h-screen flex-col">
+        <h1 className="text-3xl font-bold ">
+          Loading....
+        </h1>
+      </main>
     )
-
-    return <div>
-        Login
-    </div>
 }
