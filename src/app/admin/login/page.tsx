@@ -17,7 +17,7 @@ export default function Login() {
         // Signed in 
         const user = userCredential.user;
         console.log(user);
-        router.push('admin/main')
+        router.push('/admin/main')
         // ...
       })
       .catch((error) => {
