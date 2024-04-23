@@ -15,8 +15,8 @@ const createGuid = () => {
 export const NewProject = () => {
     const [image, setImage] = useState("")
     return <div>
-        <div className='w-full max-w-[1152px] z-10 text-[#1C221F] space-y-[20px]'>
-            <h2 className='text-[32px] font-bold'>Create new project</h2>
+        <div className="mx-auto flex w-full max-w-sm flex-col gap-6">
+            <h2 className='text-3xl font-semibold'>Create new project</h2>
             <Formik
                 initialValues={{
                     id: createGuid(),
@@ -44,17 +44,17 @@ export const NewProject = () => {
                         .finally(() => { console.log("done") })
                 }}
             >
-                <Form className='flex flex-col w-full text-[20px]'>
-                    <label htmlFor="title">Title</label>
-                    <Field id="title" name="title" placeholder="Title.." type="title" className="mb-[10px] p-[10px]" />
+                <Form className='form-group'>
+                    <label htmlFor="title" className='form-label'>Title</label>
+                    <Field id="title" name="title" placeholder="Title.." type="title" className="input" />
 
-                    <label htmlFor="description">Description</label>
-                    <MyTextareaField id="description" name="description" placeholder="Description.." className="mb-[10px] p-[10px]" />
+                    <label htmlFor="description" className='form-label'>Description</label>
+                    <MyTextareaField id="description" name="description" placeholder="Description.." className="textarea" />
 
-                    <label htmlFor="videoUrl">Video Url</label>
-                    <Field id="videoUrl" name="videoUrl" placeholder="videoUrl.." type="videoUrl" className="mb-[10px] p-[10px]" />
+                    <label htmlFor="videoUrl" className='form-label'>Video Url</label>
+                    <Field id="videoUrl" name="videoUrl" placeholder="videoUrl.." type="videoUrl" className="input" />
 
-                    <label htmlFor="imageUrl">Thumb</label>
+                    <label htmlFor="imageUrl" className='form-label'>Thumb</label>
                     <ImagePicker
                         id={'imageUrl'}
                         name={'imageUrl'}
