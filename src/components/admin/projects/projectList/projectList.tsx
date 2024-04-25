@@ -2,6 +2,7 @@ import { db } from "@/dataLayer/initFirebase";
 import { ProjectData } from "@/models/project";
 import { collection, query, getDocs, onSnapshot } from "firebase/firestore";
 import { useEffect, useState } from "react";
+import { ProjectCell } from "./projectCell";
 
 export const ProjectList = () => {
     const [project, SetProjects] = useState<ProjectData[]>([])
@@ -29,6 +30,6 @@ export const ProjectList = () => {
 
 
     return <div>Project list
-        <div>{project.map(x => <p key={x.id}>{x.title}</p>)}</div>
+        <div>{project.map(x => <ProjectCell key={x.id} data={x}/>)}</div>
     </div>
 }

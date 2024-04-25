@@ -14,59 +14,57 @@ const createGuid = () => {
 
 export const NewProject = () => {
     const [image, setImage] = useState("")
-    return <div>
-        <div className="mx-auto flex w-full max-w-sm flex-col gap-6">
-            <h2 className='text-3xl font-semibold'>Create new project</h2>
-            <Formik
-                initialValues={{
-                    id: createGuid(),
-                    title: '',
-                    description: '',
-                    imageUrl: '',
-                    videoUrl: '',
-                }}
-                onSubmit={(
-                    values: ProjectData,
-                    { setSubmitting, resetForm }: FormikHelpers<ProjectData>
-                ) => {
-                    const cityRef = doc(db, "projects", values.id);
-                    const data = {
-                        ...values,
-                        imageUrl: image
-                    }
-                    setDoc(cityRef, data, { merge: true })
-                        .then(_x => {
-                            resetForm();
-                            setSubmitting(false);
-                            setImage("")
-                        })
-                        .catch(error => console.log(error))
-                        .finally(() => { console.log("done") })
-                }}
-            >
-                <Form className='form-group'>
-                    <label htmlFor="title" className='form-label'>Title</label>
-                    <Field id="title" name="title" placeholder="Title.." type="title" className="input" />
+    return <div className="mx-auto flex w-full max-w-sm flex-col gap-6">
+        <h2 className='text-3xl font-semibold'>Create new project</h2>
+        <Formik
+            initialValues={{
+                id: createGuid(),
+                title: '',
+                description: '',
+                imageUrl: '',
+                videoUrl: '',
+            }}
+            onSubmit={(
+                values: ProjectData,
+                { setSubmitting, resetForm }: FormikHelpers<ProjectData>
+            ) => {
+                const cityRef = doc(db, "projects", values.id);
+                const data = {
+                    ...values,
+                    imageUrl: image
+                }
+                setDoc(cityRef, data, { merge: true })
+                    .then(_x => {
+                        resetForm();
+                        setSubmitting(false);
+                        setImage("")
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => { console.log("done") })
+            }}
+        >
+            <Form className='form-group'>
+                <label htmlFor="title" className='form-label'>Title</label>
+                <Field id="title" name="title" placeholder="Title.." type="title" className="input" />
 
-                    <label htmlFor="description" className='form-label'>Description</label>
-                    <MyTextareaField id="description" name="description" placeholder="Description.." className="textarea" />
+                <label htmlFor="description" className='form-label'>Description</label>
+                <MyTextareaField id="description" name="description" placeholder="Description.." className="textarea" />
 
-                    <label htmlFor="videoUrl" className='form-label'>Video Url</label>
-                    <Field id="videoUrl" name="videoUrl" placeholder="videoUrl.." type="videoUrl" className="input" />
+                <label htmlFor="videoUrl" className='form-label'>Video Url</label>
+                <Field id="videoUrl" name="videoUrl" placeholder="videoUrl.." type="videoUrl" className="input" />
 
-                    <label htmlFor="imageUrl" className='form-label'>Thumb</label>
-                    <ImagePicker
-                        id={'imageUrl'}
-                        name={'imageUrl'}
-                        uploadLocation={'projects'}
-                        className={''}
-                        value={image}
-                        onChange={img => setImage(img)}
-                    />
+                <label htmlFor="imageUrl" className='form-label'>Thumb</label>
+                <ImagePicker
+                    id={'imageUrl'}
+                    name={'imageUrl'}
+                    uploadLocation={'projects'}
+                    className={''}
+                    value={image}
+                    onChange={img => setImage(img)}
+                />
 
-                    <button className='btn btn-primary' type="submit">Create new</button>
-                </Form>
-            </Formik>
-        </div>
+                <button className='btn btn-primary' type="submit">Create new</button>
+            </Form>
+        </Formik>
     </div>
 }
