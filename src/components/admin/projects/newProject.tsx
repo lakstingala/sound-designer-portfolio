@@ -19,35 +19,37 @@ export const NewProject = ({ isOpen, onClose, currentData }: Props) => {
         <input type="checkbox" id="drawer-left" className="drawer-toggle" checked={isOpen} />
         <label className="overlay" htmlFor="drawer-left"></label>
         <div className="drawer">
-            <div className="drawer-content pt-10 flex flex-col h-full">
-                <label onClick={e => onClose()} htmlFor="drawer-left" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</label>
-                <div>
-                    <h2 className="text-xl font-medium p-[5px]">Project details</h2>
-                    <Formik
-                        initialValues={currentData}
-                        onSubmit={(
-                            values: ProjectData,
-                            { setSubmitting, resetForm }: FormikHelpers<ProjectData>
-                        ) => {
-                            const id = currentData.id;
-                            const cityRef = doc(db, "projects", id);
-                            console.log("id", id)
-                            const data = {
-                                ...values,
-                                id: id,
-                                imageUrl: image
-                            }
-                            setDoc(cityRef, data, { merge: true })
-                                .then(_x => {
-                                    resetForm();
-                                    setSubmitting(false);
-                                    setImage("")
-                                })
-                                .catch(error => console.log(error))
-                                .finally(() => { console.log("done") })
-                        }}
-                    >
-                        <Form className='form-group'>
+            <Formik
+                initialValues={currentData}
+                onSubmit={(
+                    values: ProjectData,
+                    { setSubmitting, resetForm }: FormikHelpers<ProjectData>
+                ) => {
+                    const id = currentData.id;
+                    const cityRef = doc(db, "projects", id);
+                    console.log("id", id)
+                    const data = {
+                        ...values,
+                        id: id,
+                        imageUrl: image
+                    }
+                    setDoc(cityRef, data, { merge: true })
+                        .then(_x => {
+                            resetForm();
+                            setSubmitting(false);
+                            setImage("")
+                        })
+                        .catch(error => alert(error))
+                        .finally(() => { onClose() })
+                }}
+            >
+                <Form className='form-group'>
+                    <div className="drawer-content pt-10 flex flex-col h-full">
+                        <label onClick={e => onClose()} htmlFor="drawer-left" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</label>
+                        <div>
+                            <h2 className="text-xl font-medium p-[5px]">Project details</h2>
+
+
                             <label htmlFor="position" className='form-label'>Position</label>
                             <Field id="position" name="position" placeholder="position" type="position" className="input" />
 
@@ -69,16 +71,14 @@ export const NewProject = ({ isOpen, onClose, currentData }: Props) => {
                                 value={image}
                                 onChange={img => setImage(img)}
                             />
-
-                            <button className='btn btn-primary' type="submit">Create new</button>
-                        </Form>
-                    </Formik>
-                </div>
-                <div className="h-full flex flex-row justify-end items-end gap-2">
-                    <button onClick={e => onClose()} className="btn btn-ghost">Cancel</button>
-                    <button className="btn btn-primary">Save</button>
-                </div>
-            </div>
+                        </div>
+                        <div className="pt-[30px] h-full flex flex-row justify-end items-end gap-2">
+                            <button onClick={e => onClose()} className="btn btn-ghost">Cancel</button>
+                            <button className="btn btn-primary" type="submit">Save</button>
+                        </div>
+                    </div>
+                </Form>
+            </Formik>
         </div>
-    </div>
+    </div >
 }
