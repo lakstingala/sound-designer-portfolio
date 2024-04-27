@@ -6,7 +6,7 @@ const monserat = Montserrat({ subsets: ['latin'] })
 const TopMenu = () => {
 
     return (
-        <>
+        <div className='sticky top-0 z-30'>
             <div className="w-full flex flex-row justify-between border border-red p-[12px] bg-[#DFDED0]">
                 <h1 className={"text-[24px] text-[#1C221F] " + monserat.className}>Karolis Balčius</h1>
                 <div className="flex flex-row space-x-[20px]">
@@ -16,7 +16,7 @@ const TopMenu = () => {
                 </div>
             </div>
             <div className="bg-[#7B9A98] h-[3px] w-full"></div>
-        </>
+        </div>
     );
 };
 
