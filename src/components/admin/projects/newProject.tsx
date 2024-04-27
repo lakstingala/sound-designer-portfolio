@@ -15,6 +15,24 @@ const createGuid = () => {
 export const NewProject = () => {
     const [image, setImage] = useState("")
     return <div className="mx-auto flex w-full max-w-sm flex-col gap-6">
+        <input type="checkbox" id="drawer-left" className="drawer-toggle" />
+
+        <label htmlFor="drawer-left" className="btn btn-primary" onClick={e => console.log("a")}>Open Left</label>
+        
+        <label className="overlay" htmlFor="drawer-left"></label>
+        <div className="drawer">
+            <div className="drawer-content pt-10 flex flex-col h-full">
+                <label htmlFor="drawer-left" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</label>
+                <div>
+                    <h2 className="text-xl font-medium">Create your account</h2>
+                    <input className="input py-1.5 my-3" placeholder="Type here..." />
+                </div>
+                <div className="h-full flex flex-row justify-end items-end gap-2">
+                    <button className="btn btn-ghost">Cancel</button>
+                    <button className="btn btn-primary">Create</button>
+                </div>
+            </div>
+        </div>
         <h2 className='text-3xl font-semibold'>Create new project</h2>
         <Formik
             initialValues={{
@@ -44,6 +62,9 @@ export const NewProject = () => {
             }}
         >
             <Form className='form-group'>
+                <label htmlFor="id" className='form-label'>id</label>
+                <Field disabled id="id" name="id" placeholder="id" type="id" className="input" />
+
                 <label htmlFor="title" className='form-label'>Title</label>
                 <Field id="title" name="title" placeholder="Title.." type="title" className="input" />
 
