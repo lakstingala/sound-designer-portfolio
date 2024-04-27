@@ -20,7 +20,8 @@ export const ProjectList = ({ onEdit }: Props) => {
                     const proj = doc.data() as ProjectData
                     projects.push(proj)
                 })
-                SetProjects(projects)
+                SetProjects(projects.sort((a,b) => (a.position > b.position) ? 1 : ((b.position > a.position) ? -1 : 0))
+                )
             },
             (error) => {
                 console.log(error)

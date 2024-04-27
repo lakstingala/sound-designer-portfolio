@@ -24,7 +24,7 @@ export default function Home() {
                 imageUrl: '',
                 videoUrl: '',
             })
-        }}>Open Left</button>
+        }}>Create new Project</button>
         <ProjectList onEdit={setCurrentProject} />
         {currentProject && <NewProject onClose={() => setCurrentProject(undefined)} isOpen={currentProject!=undefined} currentData={currentProject} />}
 
