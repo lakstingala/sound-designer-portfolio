@@ -46,8 +46,8 @@ export const NewProject = () => {
                 values: ProjectData,
                 { setSubmitting, resetForm }: FormikHelpers<ProjectData>
             ) => {
-                const cityRef = doc(db, "projects", values.id);
                 const id = createGuid();
+                const cityRef = doc(db, "projects", id);
                 console.log("id", id)
                 const data = {
                     ...values,
