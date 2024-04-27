@@ -47,8 +47,11 @@ export const NewProject = () => {
                 { setSubmitting, resetForm }: FormikHelpers<ProjectData>
             ) => {
                 const cityRef = doc(db, "projects", values.id);
+                const id = createGuid();
+                console.log("id", id)
                 const data = {
                     ...values,
+                    id: id,
                     imageUrl: image
                 }
                 setDoc(cityRef, data, { merge: true })
