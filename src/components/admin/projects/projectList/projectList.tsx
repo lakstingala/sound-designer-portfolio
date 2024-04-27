@@ -1,10 +1,14 @@
 import { db } from "@/dataLayer/initFirebase";
 import { ProjectData } from "@/models/project";
 import { collection, query, getDocs, onSnapshot } from "firebase/firestore";
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { ProjectCell } from "./projectCell";
 
-export const ProjectList = () => {
+interface Props {
+    onEdit: Dispatch<SetStateAction<ProjectData | undefined>>
+}
+
+export const ProjectList = ({ onEdit }: Props) => {
     const [project, SetProjects] = useState<ProjectData[]>([])
 
     useEffect(() => {
@@ -30,6 +34,9 @@ export const ProjectList = () => {
 
 
     return <div className="grid grid-cols-1 md:grid-cols-3">
-        <div>{project.map(x => <ProjectCell key={x.id} data={x}/>)}</div>
+        <div>{project.map(x => <div className="relative">
+            <button onClick={e => onEdit(x)} className="absolute top-[0] right-[0] btn btn-primary z-50">Edit</button>
+            <ProjectCell key={x.id} data={x} />
+        </div>)}</div>
     </div>
 }
