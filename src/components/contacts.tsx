@@ -8,6 +8,10 @@ interface Values {
 }
 
 const Contacts = () => {
+    const submitForm = () => {
+        
+    }
+
     return (
         <>
             <div className='w-full h-[3px] bg-[#7B9A98]' />

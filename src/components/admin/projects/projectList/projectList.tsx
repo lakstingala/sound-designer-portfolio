@@ -29,7 +29,7 @@ export const ProjectList = () => {
 
 
 
-    return <div>Project list
+    return <div className="grid grid-cols-1 md:grid-cols-3">
         <div>{project.map(x => <ProjectCell key={x.id} data={x}/>)}</div>
     </div>
 }
