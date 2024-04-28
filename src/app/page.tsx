@@ -15,7 +15,7 @@ export default async function Home() {
     <TopMenu />
     {/* <div className="flex flex-col md:flex-row justify-between"> */}
     <div className="grid grid-cols-1 md:grid-cols-3">
-      {images?.sort((a,b) => (a.position > b.position) ? 1 : ((b.position > a.position) ? -1 : 0)).map(x => {
+      {images?.sort((a, b) => (a.position > b.position) ? 1 : ((b.position > a.position) ? -1 : 0)).map(x => {
         return <div key={x.id}>
           <ImageCell thumb={x.imageUrl} thumbAlt={""} thumbWidth={1000} thumbHeight={1000} onClick={() => {
             setEmbedId(x.videoUrl)
@@ -23,9 +23,8 @@ export default async function Home() {
         </div>
       })}
       <button onClick={async e => console.log(await getData())}>Get data</button>
-      <ModalVideo embedId={embedId} onClose={function (): void {
-        setEmbedId("")
-      }} />
+      <p>{embedId}</p>
+      <ModalVideo embedId={embedId} onClose={() => { setEmbedId("") }} />
     </div>
     <About />
     <Contacts />
@@ -36,11 +35,11 @@ async function getData() {
   const res = await fetch('https://getprojects-ekeffyda6a-ey.a.run.app/')
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
- 
+
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
     throw new Error('Failed to fetch data')
   }
- 
+
   return res.json()
 }
