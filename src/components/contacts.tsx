@@ -45,7 +45,7 @@ const Contacts = () => {
                             <Field
                                 id="email"
                                 name="email"
-                                placeholder="john@acme.com"
+                                placeholder="john@company.com"
                                 type="email"
                                 className="mb-[10px] p-[10px]"
                             />

@@ -31,6 +31,7 @@ export const NewProject = ({ isOpen, onClose, currentData }: Props) => {
                     const data = {
                         ...values,
                         id: id,
+                        position: parseInt("" + values.position),
                         imageUrl: image
                     }
                     setDoc(cityRef, data, { merge: true })
