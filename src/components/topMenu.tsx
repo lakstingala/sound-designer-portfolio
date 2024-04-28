@@ -8,8 +8,8 @@ const TopMenu = () => {
     return (
         <div className='sticky top-0 z-30'>
             <div className="w-full flex flex-row justify-between border border-red p-[12px] bg-[#DFDED0]">
-                <h1 className={"text-[24px] text-[#1C221F] " + monserat.className}>Karolis Balčius</h1>
-                <div className="flex flex-row space-x-[20px]">
+                <h1 className={"text-[24px] text-[#1C221F] pl-[70px] " + monserat.className}>Karolis Balčius</h1>
+                <div className="flex flex-row space-x-[20px] pr-[70px]">
                     <Image className="shadow-2xl transition-shadow duration-300 ease-in-out" src={"/icon.svg"} width={28} height={28} alt={"icon"} />
                     <Image className="shadow-2xl transition-shadow duration-300 ease-in-out" src={"/icon_2.svg"} width={28} height={28} alt={"icon_2"} />
                     <Image className="shadow-2xl transition-shadow duration-300 ease-in-out" src={"/icon_3.svg"} width={28} height={35} alt={"icon_3"} />
