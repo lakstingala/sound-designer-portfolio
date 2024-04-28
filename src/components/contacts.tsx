@@ -39,7 +39,7 @@ const Contacts = () => {
                     >
                         <Form className='flex flex-col w-full text-[20px]'>
                             <label htmlFor="name">Name</label>
-                            <Field id="name" name="name" placeholder="John" type="name" className="mb-[10px] p-[10px]" />
+                            <Field id="name" name="name" placeholder="John" type="name" className="mb-[10px] p-[10px] bg-blue" />
 
                             <label htmlFor="email">Email</label>
                             <Field

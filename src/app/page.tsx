@@ -19,11 +19,12 @@ export default async function Home() {
         return <div key={x.id}>
           <ImageCell thumb={x.imageUrl} thumbAlt={""} thumbWidth={1000} thumbHeight={1000} onClick={() => {
             setEmbedId(x.videoUrl)
+            console.log(x.videoUrl)
           }} title={x.title} description={x.description} />
         </div>
       })}
       <button onClick={async e => console.log(await getData())}>Get data</button>
-      <p>{embedId}</p>
+      <p>ID: {embedId}</p>
       <ModalVideo embedId={embedId} onClose={() => { setEmbedId("") }} />
     </div>
     <About />
