@@ -9,12 +9,12 @@ interface Values {
 
 const Contacts = () => {
     const submitForm = () => {
-        
+
     }
 
     return (
         <>
-            <div className='w-full h-[3px] bg-[#7B9A98]' />
+            <div className='w-full h-[3px] bg-[#7B9A98] pt-[20px]' />
             <div className="relative w-full flex flex-col p-[10px] bg-[#DFDED0] items-center">
                 <div className='w-full max-w-[1152px] z-10 text-[#1C221F] space-y-[20px]'>
                     <h2 className='text-[32px] font-bold'>Contact me</h2>
