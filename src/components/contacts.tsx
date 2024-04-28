@@ -8,8 +8,14 @@ interface Values {
 }
 
 const Contacts = () => {
-    const submitForm = () => {
-
+    const submitForm = (v: Values) => {
+        fetch('https://us-central1-karolio-portfolio-web.cloudfunctions.net/submitForm', {
+            method: 'POST',
+            body: JSON.stringify(v)
+          }).then(function(response) {
+            console.log(response)
+            return response.json()
+          })
     }
 
     return (
@@ -28,10 +34,7 @@ const Contacts = () => {
                             values: Values,
                             { setSubmitting }: FormikHelpers<Values>
                         ) => {
-                            setTimeout(() => {
-                                alert(JSON.stringify(values, null, 2));
-                                setSubmitting(false);
-                            }, 500);
+                            submitForm(values)
                         }}
                     >
                         <Form className='flex flex-col w-full text-[20px]'>

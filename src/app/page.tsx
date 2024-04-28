@@ -22,6 +22,7 @@ export default async function Home() {
           }} title={x.title} description={x.description} />
         </div>
       })}
+      <button onClick={async e => console.log(await getData())}>Get data</button>
       <ModalVideo embedId={embedId} onClose={function (): void {
         setEmbedId("")
       }} />
