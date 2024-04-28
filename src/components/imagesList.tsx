@@ -10,10 +10,9 @@ export const ImagesList = async ({ setEmbedId }: Props) => {
 
     return <div className="grid grid-cols-1 md:grid-cols-3">
         {images?.sort((a, b) => (a.position > b.position) ? 1 : ((b.position > a.position) ? -1 : 0)).map(x => {
-            return <div onClick={() => { console.log("asasas") }} key={x.id}>
+            return <div key={x.id}>
                 <ImageCell thumb={x.imageUrl} thumbAlt={""} thumbWidth={192} thumbHeight={108} onClick={() => {
                     setEmbedId(x.videoUrl)
-                    // console.log(x.videoUrl)
                 }} title={x.title} description={x.description} />
             </div>
         })}
@@ -21,7 +20,7 @@ export const ImagesList = async ({ setEmbedId }: Props) => {
 }
 
 async function getData() {
-    const res = await fetch('https://getprojects-ekeffyda6a-ey.a.run.app/')
+    const res = await fetch('https://getprojects-ekeffyda6a-ey.a.run.app')
     // The return value is *not* serialized
     // You can return Date, Map, Set, etc.
 
