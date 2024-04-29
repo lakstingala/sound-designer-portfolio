@@ -9,8 +9,6 @@ import { useState } from "react"
 
 export default function Home() {
   const [embedId, setEmbedId] = useState("")
-
-  console.log(embedId)
   return <div>
     <TopMenu />
     <ImagesList setVideoId={id => {setEmbedId(id)}} />

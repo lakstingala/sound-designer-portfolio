@@ -9,7 +9,7 @@ interface Values {
 
 const Contacts = () => {
     const submitForm = (v: Values) => {
-        fetch('https://us-central1-karolio-portfolio-web.cloudfunctions.net/submitForm', {
+        fetch('https://submitform-ekeffyda6a-ey.a.run.app', {
             method: 'POST',
             body: JSON.stringify(v)
           }).then(function(response) {
