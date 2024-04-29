@@ -23,7 +23,7 @@ const ImageCell = ({ thumb, thumbWidth, thumbHeight, thumbAlt, onClick, title, d
         <div>
             <button
                 className="relative flex justify-center items-center focus:outline-none focus-visible:ring focus-visible:ring-indigo-300 w-full group"
-                onClick={() => { console.log("aaa"); onClick()}}
+                onClick={() => { onClick() }}
                 aria-label="Watch the video"
             >
                 <Image className="w-full shadow-2xl transition-shadow duration-300 ease-in-out" src={thumb} width={thumbWidth} height={thumbHeight} priority alt={thumbAlt} />

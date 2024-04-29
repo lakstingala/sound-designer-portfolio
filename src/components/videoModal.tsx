@@ -1,5 +1,3 @@
-'use client'
-
 import { useRef, Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import YouTubeEmbed from './embedVideo'
@@ -15,7 +13,6 @@ export default function ModalVideo({
 }: ModalVideoProps) {
     const modalOpen = embedId != ""
     const videoRef = useRef<HTMLVideoElement>(null)
-
     return (
         <div>
             <Transition show={modalOpen} as={Fragment} afterEnter={() => videoRef.current?.play()}>

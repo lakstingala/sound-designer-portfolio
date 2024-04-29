@@ -7,13 +7,14 @@ import TopMenu from "@/components/topMenu"
 import ModalVideo from "@/components/videoModal"
 import { useState } from "react"
 
-export default async function Home() {
+export default function Home() {
   const [embedId, setEmbedId] = useState("")
 
-  return <div onClick={() => console.log("asas")}>
+  console.log(embedId)
+  return <div>
     <TopMenu />
-    <ImagesList setEmbedId={id => setEmbedId(id)} />
-    <ModalVideo embedId={embedId} onClose={() => { setEmbedId("") }} />
+    <ImagesList setVideoId={id => {setEmbedId(id)}} />
+    <ModalVideo key={embedId} embedId={embedId} onClose={() => { setEmbedId("") }} />
     <About />
     <Contacts />
   </div>
