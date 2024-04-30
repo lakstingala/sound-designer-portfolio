@@ -37,7 +37,7 @@ const ImageCell = ({ thumb, thumbWidth, thumbHeight, thumbAlt, onClick, title, d
                 aria-label={"Watch the video" + JSON.stringify(disable)}
             >
                 <Image className="w-full shadow-2xl transition-shadow duration-300 ease-in-out" src={thumb} width={thumbWidth} height={thumbHeight} priority alt={thumbAlt} />
-                <div className='group transition duration-300 ease-in-out opacity-0 hover:opacity-100 p-[40px] absolute w-full h-full bg-[#1C221F] bg-opacity-90 items-start justify-start'>
+                <div className='group transition duration-300 ease-in-out opacity-0 md:hover:opacity-100 p-[40px] absolute w-full h-full bg-[#1C221F] bg-opacity-90 items-start justify-start'>
                     <h2 className={'transition duration-300 ease-in-out translate-y-[190px] group-hover:translate-y-[0px] text-left text-[32px]  text-[#DFDED0] ' + popins.className}>{title}</h2>
                     {descriptions.map(x => {
                         return <p key={x} className={'transition duration-300 ease-in-out translate-y-[190px] group-hover:translate-y-[0px] text-left text-[16px] leading-[19px] pt-[20px] pl-[40px]  text-[#DFDED0] ' + monserat.className}>{x}</p>
