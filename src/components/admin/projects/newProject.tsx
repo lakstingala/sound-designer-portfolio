@@ -59,6 +59,14 @@ export const NewProject = ({ isOpen, onClose, currentData }: Props) => {
                             <label htmlFor="description" className='form-label'>Description</label>
                             <MyTextareaField id="description" name="description" placeholder="Description.." className="textarea" />
 
+
+                            <label htmlFor="description1" className='form-label'>Description1</label>
+                            <MyTextareaField id="description1" name="description1" placeholder="Description.." className="textarea" />
+
+
+                            <label htmlFor="description2" className='form-label'>Description2</label>
+                            <MyTextareaField id="description2" name="description2" placeholder="Description.." className="textarea" />
+
                             <label htmlFor="videoUrl" className='form-label'>Video Url</label>
                             <Field id="videoUrl" name="videoUrl" placeholder="videoUrl.." type="videoUrl" className="input" />
 

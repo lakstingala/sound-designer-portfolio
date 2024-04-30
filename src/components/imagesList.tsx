@@ -29,7 +29,7 @@ export const ImagesList = ({ setVideoId, disable }: Props) => {
             return <div key={x.id}>
                 <ImageCell disable={disable} thumb={x.imageUrl} thumbAlt={""} thumbWidth={576} thumbHeight={324} onClick={() => {
                     setVideoId(x.videoUrl.replace("https://youtu.be/", ""))
-                }} title={x.title} description={x.description} />
+                }} title={x.title} descriptions={[x.description, x.description1, x.description2]} />
             </div>
         })}
     </div>

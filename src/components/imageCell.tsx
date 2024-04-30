@@ -10,7 +10,7 @@ const monserat = Montserrat({ subsets: ['latin'] })
 
 interface Props {
     title: string,
-    description: string,
+    descriptions: string[],
     thumb: string
     thumbAlt: string
     thumbWidth: number
@@ -19,7 +19,7 @@ interface Props {
     disable: boolean
 }
 
-const ImageCell = ({ thumb, thumbWidth, thumbHeight, thumbAlt, onClick, title, description, disable }: Props) => {
+const ImageCell = ({ thumb, thumbWidth, thumbHeight, thumbAlt, onClick, title, descriptions, disable }: Props) => {
     const [disabled, setDisabled] = useState(false)
 
     useEffect(() => {
@@ -39,7 +39,9 @@ const ImageCell = ({ thumb, thumbWidth, thumbHeight, thumbAlt, onClick, title, d
                 <Image className="w-full shadow-2xl transition-shadow duration-300 ease-in-out" src={thumb} width={thumbWidth} height={thumbHeight} priority alt={thumbAlt} />
                 <div className='group transition duration-300 ease-in-out opacity-0 hover:opacity-100 p-[40px] absolute w-full h-full bg-[#1C221F] bg-opacity-90 items-start justify-start'>
                     <h2 className={'transition duration-300 ease-in-out translate-y-[190px] group-hover:translate-y-[0px] text-left text-[32px]  text-[#DFDED0] ' + popins.className}>{title}</h2>
-                    <p className={'transition duration-300 ease-in-out translate-y-[190px] group-hover:translate-y-[0px] text-left text-[16px] leading-[19px] pt-[20px] pl-[40px]  text-[#DFDED0] ' + monserat.className}>{description}</p>
+                    {descriptions.map(x => {
+                        return <p key={x} className={'transition duration-300 ease-in-out translate-y-[190px] group-hover:translate-y-[0px] text-left text-[16px] leading-[19px] pt-[20px] pl-[40px]  text-[#DFDED0] ' + monserat.className}>{x}</p>
+                    })}
                 </div>
                 {/* Play icon */}
                 {/* <svg className="absolute pointer-events-none group-hover:scale-110 transition-transform duration-300 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="72" height="72">

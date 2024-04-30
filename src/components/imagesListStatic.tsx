@@ -9,7 +9,7 @@ export const ImagesListStatic = async () => {
         {images?.sort((a, b) => (a.position > b.position) ? 1 : ((b.position > a.position) ? -1 : 0)).map(x => {
             return <div key={x.id}>
                 <ImageCell thumb={x.imageUrl} thumbAlt={""} thumbWidth={192} thumbHeight={108} onClick={() => {
-                }} title={x.title} description={x.description} />
+                } } title={x.title} descriptions={[x.description]} disable={true} />
             </div>
         })}
     </div>

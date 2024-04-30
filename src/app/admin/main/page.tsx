@@ -21,6 +21,8 @@ export default function Home() {
                 position: 0,
                 title: '',
                 description: '',
+                description1: '',
+                description2: '',
                 imageUrl: '',
                 videoUrl: '',
             })
