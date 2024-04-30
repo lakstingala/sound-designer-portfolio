@@ -27,7 +27,6 @@ export const NewProject = ({ isOpen, onClose, currentData }: Props) => {
                 ) => {
                     const id = currentData.id;
                     const cityRef = doc(db, "projects", id);
-                    console.log("id", id)
                     const data = {
                         ...values,
                         id: id,

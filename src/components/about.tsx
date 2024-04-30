@@ -19,7 +19,7 @@ const About = () => {
                     <div className='h-[5px]' />
                     <p>I can make music and create the sound design for your brand, commercial, cgi, video game, or produce you entirely as an artist from A to Z. </p>
                     <div className='h-[5px]' />
-                    <p>I’ve been working in the field for over 20 years now and worked with the likes of Redbull, Atari, Swedbank, NBC and blah blah blah…</p>
+                    <p>I’ve been working in the field for over 20 years now and worked with the likes of Redbull, Atari, Swedbank, NBC and more.</p>
                     <div className='h-[5px]' />
                     <p>Let’s make something cool!</p>
                 </div>
