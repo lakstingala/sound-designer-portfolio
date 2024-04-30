@@ -48,9 +48,9 @@ export const ProjectList = ({ onEdit }: Props) => {
 
 
     return <div className="grid grid-cols-1 md:grid-cols-3">
-        <div>{project.map(x => <div key={x.id} className="relative">
+        {project.map(x => <div key={x.id} className="relative">
             <button onClick={e => onEdit(x)} className="absolute top-[5px] right-[5px] btn btn-primary z-50">Edit</button>
-            <button onClick={e => {setIsDeleting(x) }} className="absolute top-[55px] right-[5px] btn btn-primary z-50">Delete</button>
+            <button onClick={e => { setIsDeleting(x) }} className="absolute top-[55px] right-[5px] btn btn-primary z-50">Delete</button>
             <input className="modal-state" id="modal-1" type="checkbox" checked={isDeleting != undefined} />
             <div className="modal">
                 <label className="modal-overlay" htmlFor="modal-1"></label>
@@ -67,5 +67,4 @@ export const ProjectList = ({ onEdit }: Props) => {
             </div>
             <ProjectCell key={x.id} data={x} />
         </div>)}</div>
-    </div>
 }
