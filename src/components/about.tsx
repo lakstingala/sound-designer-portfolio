@@ -10,7 +10,7 @@ const monserat = Montserrat({ subsets: ['latin'] })
 const About = () => {
 //md:h-[941px] md:w-[1077px]
     return (
-        <div className="relative w-full flex flex-col md:flex-row h-[840px] md:h-[750px] p-[12px] bg-[#1C221F] md:justify-center">
+        <div className="relative w-full flex flex-col md:flex-row h-[940px] md:h-[750px] p-[12px] bg-[#1C221F] md:justify-center">
             <Image className="absolute bottom-[0] right-[0] shadow-2xl transition-shadow duration-300 ease-in-out md:w-[858px]" src={"/karolis.jpeg"} width={1340} height={941} alt={"icon"} />
             <div className='w-full max-w-[1152px] z-10 pt-[32px]'>
                 <h1 className={"text-[32px] pb-[20px] text-[#DFDED0] " + popins.className}>I’m Karolis.</h1>
