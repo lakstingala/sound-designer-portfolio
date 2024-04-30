@@ -27,7 +27,7 @@ export const ImagesList = ({ setVideoId }: Props) => {
     return <div className="grid grid-cols-1 md:grid-cols-3">
         {images?.sort((a, b) => (a.position > b.position) ? 1 : ((b.position > a.position) ? -1 : 0)).map(x => {
             return <div key={x.id}>
-                <ImageCell thumb={x.imageUrl} thumbAlt={""} thumbWidth={192} thumbHeight={108} onClick={() => {
+                <ImageCell thumb={x.imageUrl} thumbAlt={""} thumbWidth={576} thumbHeight={324} onClick={() => {
                     setVideoId(x.videoUrl.replace("https://youtu.be/", ""))
                 }} title={x.title} description={x.description} />
             </div>
