@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image'
 import { Montserrat, Poppins } from 'next/font/google';
 
@@ -16,15 +16,25 @@ interface Props {
     thumbWidth: number
     thumbHeight: number
     onClick: () => void
+    disable: boolean
 }
 
-const ImageCell = ({ thumb, thumbWidth, thumbHeight, thumbAlt, onClick, title, description }: Props) => {
+const ImageCell = ({ thumb, thumbWidth, thumbHeight, thumbAlt, onClick, title, description, disable }: Props) => {
+    const [disabled, setDisabled] = useState(false)
+
+    useEffect(() => {
+        setTimeout(()=> {
+            setDisabled(disable)
+        }, 100)
+    }, [disable])
     return (
         <div>
             <button
+                key={"button" + JSON.stringify(disable)}
+                disabled={disabled}
                 className="relative flex justify-center items-center focus:outline-none focus-visible:ring focus-visible:ring-indigo-300 w-full group"
                 onClick={() => { onClick() }}
-                aria-label="Watch the video"
+                aria-label={"Watch the video" + JSON.stringify(disable)}
             >
                 <Image className="w-full shadow-2xl transition-shadow duration-300 ease-in-out" src={thumb} width={thumbWidth} height={thumbHeight} priority alt={thumbAlt} />
                 <div className='group transition duration-300 ease-in-out opacity-0 hover:opacity-100 p-[40px] absolute w-full h-full bg-[#1C221F] bg-opacity-90 items-start justify-start'>

@@ -9,10 +9,11 @@ import { useState } from "react"
 
 export default function Home() {
   const [embedId, setEmbedId] = useState("")
+  console.log(embedId != "")
   return <div>
     <TopMenu />
-    <ImagesList setVideoId={id => {setEmbedId(id)}} />
     <ModalVideo key={embedId} embedId={embedId} onClose={() => { setEmbedId("") }} />
+    <ImagesList disable={embedId != ""} setVideoId={id => { setEmbedId(id) }} />
     <About />
     <Contacts />
   </div>
