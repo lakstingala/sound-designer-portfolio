@@ -6,7 +6,7 @@ interface Props {
 }
 
 export const ProjectCell = ({ data }: Props) => {
-    return <ImageCell thumb={data.imageUrl} thumbAlt={""} thumbWidth={900} thumbHeight={600} onClick={() => {
+    return <ImageCell disable={false} thumb={data.imageUrl} thumbAlt={""} thumbWidth={900} thumbHeight={600} onClick={() => {
         alert("Open Youtube")
     } } title={data.title} description={data.description} />
 }
