@@ -10,7 +10,7 @@ interface Values {
 
 const Contacts = () => {
     const [loading, setLoading] = useState(false)
-    const [success, setSuccess]= useState(false)
+    const [success, setSuccess] = useState(false)
 
     const submitForm = (v: Values) => {
         setLoading(true)
@@ -26,8 +26,10 @@ const Contacts = () => {
     if (loading) {
         return <>
             <div className='w-full h-[3px] bg-[#7B9A98]' />
-            <div className='w-full max-w-[1152px] h-[530px] z-10 text-[#1C221F] space-y-[20px]  bg-[#DFDED0] items-center p-[32px]'>
-                <h2 className='text-[32px] font-bold'>Submitting form, please wait..</h2>
+            <div className='w-full h-[530px] z-10 text-[#1C221F] space-y-[20px]  bg-[#DFDED0] items-center p-[32px]'>
+                <div className='w-full max-w-[1152px]'>
+                    <h2 className='text-[32px] font-bold'>Submitting form, please wait..</h2>
+                </div>
             </div>
         </>
     }
@@ -35,8 +37,10 @@ const Contacts = () => {
     if (success) {
         return <>
             <div className='w-full h-[3px] bg-[#7B9A98]' />
-            <div className='w-full max-w-[1152px] h-[530px] z-10 text-[#1C221F] space-y-[20px]  bg-[#DFDED0] items-center p-[32px]'>
-                <h2 className='text-[32px] font-bold'>Thank you for your message</h2>
+            <div className='w-full  h-[530px] z-10 text-[#1C221F] space-y-[20px]  bg-[#DFDED0] items-center p-[32px]'>
+                <div className='w-full max-w-[1152px]'>
+                    <h2 className='text-[32px] font-bold'>Thank you for your message.</h2>
+                </div>
             </div>
         </>
     }
@@ -45,7 +49,7 @@ const Contacts = () => {
         <>
             <div className='w-full h-[3px] bg-[#7B9A98]' />
             <div className="relative w-full flex flex-col p-[10px] bg-[#DFDED0] items-center pt-[32px]">
-                <div className='w-full max-w-[1152px] z-10 text-[#1C221F] space-y-[20px]'>
+                <div className='w-full z-10 text-[#1C221F] space-y-[20px]'>
                     <h2 className='text-[32px] font-bold'>Contact me</h2>
                     <Formik
                         initialValues={{
