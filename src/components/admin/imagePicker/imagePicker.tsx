@@ -76,7 +76,7 @@ export const ImagePicker = (p: ImagePickerProps) => {
                 ?
                 <progress value={progress} max="100" className="progress" />
                 :
-                <div className='flex items-center space-between space-x-8'>
+                <div className='flex flex-col items-center space-between space-8 '>
                     {p.value && <div
                         style={{
                             backgroundImage: `url(${p.value})`,
@@ -89,7 +89,7 @@ export const ImagePicker = (p: ImagePickerProps) => {
                     </div>}
                     <div className="btn">
                         <span>File</span>
-                        <input type="file" onChange={handleChange} />
+                        <input className='w-[160px]' type="file" onChange={handleChange} />
                     </div>
                     <button onClick={() => setIsEditing(false)}>Cancel</button>
                 </div>
