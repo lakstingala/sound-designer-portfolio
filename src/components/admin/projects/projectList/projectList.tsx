@@ -1,3 +1,4 @@
+"use client"
 import { db } from "@/dataLayer/initFirebase";
 import { ProjectData } from "@/models/project";
 import { collection, query, getDocs, onSnapshot, doc, deleteDoc } from "firebase/firestore";
@@ -13,6 +14,7 @@ export const ProjectList = ({ onEdit }: Props) => {
     const [isDeleting, setIsDeleting] = useState<ProjectData | undefined>(undefined)
 
     useEffect(() => {
+        console.log("read")
         const unsubscribe = onSnapshot(
             collection(db, "projects"),
             (snapshot) => {
@@ -31,7 +33,7 @@ export const ProjectList = ({ onEdit }: Props) => {
         return () => {
             unsubscribe()
         }
-    })
+    }, [])
 
     const deleteProject = (projectId: string) => {
         const cityRef = doc(db, "projects", projectId);
